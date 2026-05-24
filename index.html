@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>כרטיסים למשחק י׳15 נגד י׳17</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #111827, #1f2937);
+      color: white;
+      text-align: center;
+    }
+
+    header {
+      padding: 40px 20px;
+    }
+
+    h1 {
+      font-size: 34px;
+      margin-bottom: 10px;
+    }
+
+    .info {
+      font-size: 20px;
+      color: #d1d5db;
+    }
+
+    .tickets {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 20px;
+      padding: 30px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    .card {
+      background: #ffffff;
+      color: #111827;
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+      transition: 0.3s;
+    }
+
+    .card:hover {
+      transform: scale(1.05);
+    }
+
+    .price {
+      font-size: 36px;
+      font-weight: bold;
+      color: #dc2626;
+      margin: 15px 0;
+    }
+
+    button {
+      background: #dc2626;
+      color: white;
+      border: none;
+      padding: 12px 25px;
+      border-radius: 12px;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #991b1b;
+    }
+
+    footer {
+      padding: 25px;
+      color: #9ca3af;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>🎟️ כרטיסים למשחק הגדול</h1>
+    <div class="info">
+      י׳15 נגד י׳17 ⚽<br>
+      שעה: <strong>12:15</strong><br>
+      מיקום: <strong>מיני פיץ׳</strong>
+    </div>
+  </header>
+
+  <section class="tickets">
+    <div class="card">
+      <h2>על הגדר</h2>
+      <p>עמידה</p>
+      <div class="price">₪20</div>
+      <button onclick="buyTicket('על הגדר - עמידה')">הזמן כרטיס</button>
+    </div>
+
+    <div class="card">
+      <h2>על הספסל</h2>
+      <p>ישיבה</p>
+      <div class="price">₪40</div>
+      <button onclick="buyTicket('על הספסל - ישיבה')">הזמן כרטיס</button>
+    </div>
+
+    <div class="card">
+      <h2>על הספסל</h2>
+      <p>עמידה</p>
+      <div class="price">₪10</div>
+      <button onclick="buyTicket('על הספסל - עמידה')">הזמן כרטיס</button>
+    </div>
+
+    <div class="card">
+      <h2>על גב הספסל</h2>
+      <p>עמידה</p>
+      <div class="price">₪50</div>
+      <button onclick="buyTicket('על גב הספסל - עמידה')">הזמן כרטיס</button>
+    </div>
+  </section>
+
+  <footer>
+    נוצר במיוחד למשחק י׳15 נגד י׳17 🔥
+  </footer>
+
+  <script>
+    function buyTicket(type) {
+      alert("בחרת כרטיס: " + type + "\\nההזמנה נקלטה בהצלחה ✅");
+    }
+  </script>
+
+</body>
+</html>
