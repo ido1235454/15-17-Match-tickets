@@ -124,11 +124,48 @@
     נוצר על ידי עידו קיסרי במערכת Y15
   </footer>
 
-  <script>
-    function buyTicket(type) {
-      alert("בחרת כרטיס: " + type + "\\nההזמנה נקלטה בהצלחה");
+  <script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-app.js";
+  import { getFirestore, collection, addDoc, serverTimestamp } from "https://www.gstatic.com/firebasejs/10.12.2/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "שים-פה",
+    authDomain: "שים-פה",
+    projectId: "שים-פה",
+    storageBucket: "שים-פה",
+    messagingSenderId: "שים-פה",
+    appId: "שים-פה"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  window.buyTicket = async function(type) {
+    const firstName = prompt("שם פרטי:");
+    if (!firstName) return;
+
+    const lastName = prompt("שם משפחה:");
+    if (!lastName) return;
+
+    const className = prompt("כיתה:");
+    if (!className) return;
+
+    try {
+      await addDoc(collection(db, "tickets"), {
+        firstName,
+        lastName,
+        className,
+        ticketType: type,
+        createdAt: serverTimestamp()
+      });
+
+      alert("הכרטיס נשמר בהצלחה ✅");
+    } catch (error) {
+      alert("הייתה שגיאה בשמירה ❌");
+      console.error(error);
     }
-  </script>
+  };
+</script>
 
 </body>
 </html>
